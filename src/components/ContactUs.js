@@ -2,8 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 
 const ContactUs = () => {
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(null);
+    // const [loading, setLoading] = useState(true);
     // const [submit, setSubmit] = useState(null);
 
     const [form, setForm] = useState({
@@ -33,7 +33,7 @@ const ContactUs = () => {
             // alert(form.name + " " + form.message);
             const response = await axios.post(endpointData, {form})
             console.log(response.data);
-            setError(null);
+            // setError(null);
 
             setForm({
                 name: "",
@@ -43,14 +43,14 @@ const ContactUs = () => {
                })
         }
         catch(err) {
-            setError(err.message);
+            // setError(err.message);
             setForm(null)
             console.log(err)
             // setSubmit(null);
         }
-        finally{
-            setLoading(false);
-        }
+        // finally{
+        //     setLoading(false);
+        // }
     };
    
      return (
